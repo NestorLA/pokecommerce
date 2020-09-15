@@ -12,19 +12,22 @@ const Header = () => {
       <Navbar bg="dark" variant="dark" expand="md" className="mb-5">
         <Navbar.Brand href="#home">Pokecommerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-          
-        </Nav>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Pokemons</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
 
-        <Form inline>
-          <CartIcon />
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-        </Form>
+          <Form inline>
+            <CartIcon />
+            <FormControl
+              type="text"
+              placeholder="Busca aquí!"
+              className="mr-sm-2"
+            />
+            <Button variant="outline-info">Búsqueda</Button>
+          </Form>
         </Navbar.Collapse>
       </Navbar>
     </>

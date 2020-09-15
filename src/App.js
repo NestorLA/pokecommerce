@@ -4,15 +4,11 @@ import "./App.css";
 // Components
 import Spinner from "./components/Spinner";
 import Header from "./components/Header";
+import Home from "./components/Home";
 
 //React-Bootstrap
-import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
-// Helpers
-import { uppercaseFL } from "./helpers";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -43,33 +39,10 @@ function App() {
 
   return (
     <div className="App">
-          <Header />
+      <Header />
       <Container>
         <Row className="justify-content-md-center">
-          {load ? (
-            <Spinner />
-          ) : (
-            poke.map((img, i) => (
-              <Col xs={6} md={3} xl={2} id={img.id} key={img.id}>
-                <Card className="shadow mb-2">
-                  <Card.Img
-                    className="rounded"
-                    variant="top"
-                    src={img.sprites.front_default}
-                    alt="pokemon"
-                  />
-                  <Card.Body className="text-center">
-                    <Card.Text className="font-weight-bold">
-                      {uppercaseFL(img.name)}
-                    </Card.Text>
-                    <Card.Text className="font-italic">
-                      Tipo: {uppercaseFL(img.types[0].type.name)}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))
-          )}
+          {load ? <Spinner /> : <Home poke={poke} />}
         </Row>
       </Container>
     </div>
