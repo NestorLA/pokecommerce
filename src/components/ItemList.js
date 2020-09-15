@@ -7,9 +7,13 @@ import Col from "react-bootstrap/Col";
 // Helpers
 import { uppercaseFL } from "../helpers";
 
+//Router
+import {Link} from "react-router-dom";
+
 const ItemList = ({ poke }) => {
   return poke.map((img, i) => (
     <Col xs={4} md={3} xl={2} id={img.id} key={img.id}>
+        <Link to="pokemon/{img.id}">
       <Card className="shadow mb-2">
         <Card.Img
           className="rounded"
@@ -25,7 +29,7 @@ const ItemList = ({ poke }) => {
             Tipo: {uppercaseFL(img.types[0].type.name)}
           </Card.Text>
         </Card.Body>
-      </Card>
+      </Card></Link>
     </Col>
   ));
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Components
 import Spinner from "./components/Spinner";
@@ -9,6 +10,7 @@ import Home from "./components/Home";
 //React-Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import ItemDetail from "./components/ItemDetail";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -23,7 +25,7 @@ function App() {
       .then((response) => response.json())
       .then((data) =>
         setResult(
-          data.results.map((item) => {
+          data.results.forEach((item) => {
             fetch(item.url)
               .then((response) => response.json())
               .then((allpokemon) => arr.push(allpokemon));
@@ -39,12 +41,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Container>
-        <Row className="justify-content-md-center">
-          {load ? <Spinner /> : <Home poke={poke} />}
-        </Row>
-      </Container>
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Container>
+              <Row className="justify-content-md-center">
+                {load ? <Spinner /> : <Home poke={poke} />}
+              </Row>
+            </Container>
+          </Route>
+          <Route path="/pokemon/:id" component={ItemDetail} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
