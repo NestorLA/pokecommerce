@@ -9,8 +9,10 @@ import Button from "react-bootstrap/Button";
 const Header = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="sm" className="mb-5">
+      <Navbar bg="dark" variant="dark" expand="md" className="mb-5">
         <Navbar.Brand href="#home">Pokecommerce</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
@@ -23,6 +25,7 @@ const Header = () => {
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-info">Search</Button>
         </Form>
+        </Navbar.Collapse>
       </Navbar>
     </>
   );
