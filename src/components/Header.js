@@ -9,8 +9,8 @@ import Button from "react-bootstrap/Button";
 const Header = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" className="mb-5">
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar bg="dark" variant="dark" expand="sm" className="mb-5">
+        <Navbar.Brand href="#home">Pokecommerce</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
