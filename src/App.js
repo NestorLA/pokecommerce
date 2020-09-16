@@ -14,14 +14,14 @@ import ItemDetail from "./components/ItemDetail";
 
 function App() {
   const [result, setResult] = useState([]);
-  const [poke, setPoke] = useState([]);
+  const [pokes, setPokes] = useState([]);
   const [load, setLoad] = useState("true");
 
   const arr = [];
 
   //Llamada a la API
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=50")
       .then((response) => response.json())
       .then((data) =>
         setResult(
@@ -29,7 +29,7 @@ function App() {
             fetch(item.url)
               .then((response) => response.json())
               .then((allpokemon) => arr.push(allpokemon));
-            setPoke(arr);
+            setPokes(arr);
           })
         )
       );
@@ -37,7 +37,10 @@ function App() {
 
   setTimeout(() => {
     setLoad(false);
+    
   }, 2000);
+
+  
 
   return (
     <div className="App">
@@ -47,11 +50,13 @@ function App() {
           <Route exact path="/">
             <Container>
               <Row className="justify-content-md-center">
-                {load ? <Spinner /> : <Home poke={poke} />}
+                {load ? <Spinner /> : <Home pokes={pokes} />}
               </Row>
             </Container>
           </Route>
-          <Route path="/pokemon/:id" component={ItemDetail} />
+          <Route path="/pokemon/:id" component={ItemDetail}>
+            {load ? <Spinner /> : <ItemDetail pokes={pokes} />}
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

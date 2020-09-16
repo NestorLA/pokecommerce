@@ -1,11 +1,11 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-const Home = ({ poke }) => {
+const Home = ({ pokes }) => {
   return (
     <>
       {" "}
-      <ItemList poke={poke} />
+      <ItemList pokes={pokes} />
     </>
   );
 };
