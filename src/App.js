@@ -10,7 +10,7 @@ import Home from "./components/Home";
 //React-Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import ItemDetail from "./components/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -21,7 +21,7 @@ function App() {
 
   //Llamada a la API
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=50")
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
       .then((response) => response.json())
       .then((data) =>
         setResult(
@@ -38,7 +38,7 @@ function App() {
   setTimeout(() => {
     setLoad(false);
     
-  }, 2000);
+  }, 1500);
 
   
 
@@ -54,8 +54,7 @@ function App() {
               </Row>
             </Container>
           </Route>
-          <Route path="/pokemon/:id" component={ItemDetail}>
-            {load ? <Spinner /> : <ItemDetail pokes={pokes} />}
+          <Route path="/pokemon/:id" component={ItemDetailContainer}>
           </Route>
         </Switch>
       </BrowserRouter>
