@@ -3,7 +3,6 @@ import React from "react";
 //React-Bootstrap
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import CardDeck from "react-bootstrap/CardDeck";
 
 // Helpers
 import { uppercaseFL } from "../helpers";
