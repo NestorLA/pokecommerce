@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
 
   setTimeout(() => {
     setLoad(false);
-  }, 1500);
+  }, 1000);
 
   return <>{load ? <Spinner /> : <ItemDetail poke={poke} />}</>;
 };

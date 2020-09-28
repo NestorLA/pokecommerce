@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 
 import { uppercaseFL } from "../helpers";
@@ -12,6 +12,7 @@ import Button from "react-bootstrap/Button";
 
 const ItemDetail = ({ poke }) => {
   console.log(poke.name);
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -26,8 +27,14 @@ const ItemDetail = ({ poke }) => {
                 <Card.Text>Peso: {poke.weight / 10} kilogramos.</Card.Text>
               </Card.Body>
             </Card>
-            <ItemCount Min="1" Max="2" Initial="1" style={{ width: "16rem" }} />
-            <Button variant="dark" className="m-2">Comprar</Button>
+            <ItemCount
+              Min="1"
+              Max="4"
+              Initial="1"
+              count={count}
+              style={{ width: "16rem" }}
+              setCount={setCount}
+            />
           </Col>
         </Row>
       </Container>
