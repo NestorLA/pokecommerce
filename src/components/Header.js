@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
@@ -14,9 +16,15 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Pokemons</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Link to={"/"}>
+              <Navbar.Text className="mr-2">Home</Navbar.Text>
+            </Link>
+            <Link to={"/"}>
+              <Navbar.Text className="mr-2">Pokemons</Navbar.Text>
+            </Link>
+            <Link to={"/cart"}>
+              <Navbar.Text className="mr-2">Carrito</Navbar.Text>
+            </Link>
           </Nav>
 
           <Form inline>

@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+// Context
+
+import { CartProvider } from "./context/CartContext";
 
 // Components
 import Spinner from "./components/Spinner";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 //React-Bootstrap
 import Container from "react-bootstrap/Container";
@@ -37,26 +42,27 @@ function App() {
 
   setTimeout(() => {
     setLoad(false);
-    
   }, 1500);
-
-  
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Container>
-              <Row className="justify-content-md-center">
-                {load ? <Spinner /> : <Home pokes={pokes} />}
-              </Row>
-            </Container>
-          </Route>
-          <Route path="/pokemon/:id" component={ItemDetailContainer}>
-          </Route>
-        </Switch>
+        <CartProvider>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Container>
+                <Row className="justify-content-md-center">
+                  {load ? <Spinner /> : <Home pokes={pokes} />}
+                </Row>
+              </Container>
+            </Route>
+            <Route path="/pokemon/:id" component={ItemDetailContainer}></Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+        </CartProvider>
       </BrowserRouter>
     </div>
   );
