@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { CartContext } from "../context/CartContext";
 
 import Button from "react-bootstrap/Button";
 
-const BuyButton = ({ count }) => {
-  return <Button variant="dark" style={{ width: "16rem" }} className="mt-2"> Comprar {count} </Button>;
+const BuyButton = ({ count, poke }) => {
+  console.log(`Este es el poke: ${poke}`);
+  const [cart, setCart] = useContext(CartContext);
+
+  const addToCart = () => {
+    const pokemon = poke;
+    console.log(pokemon);
+    setCart((currentCart) => [...currentCart, pokemon]);
+  };
+
+  return (
+    <Button
+      variant="dark"
+      style={{ width: "16rem" }}
+      className="mt-2"
+      onClick={addToCart}
+    >
+      {" "}
+      Comprar {count}{" "}
+    </Button>
+  );
 };
 
 export default BuyButton;

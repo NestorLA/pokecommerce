@@ -34,6 +34,7 @@ const ItemDetail = ({ poke }) => {
               count={count}
               style={{ width: "16rem" }}
               setCount={setCount}
+              poke={poke}
             />
           </Col>
         </Row>

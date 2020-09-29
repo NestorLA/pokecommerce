@@ -35,7 +35,7 @@ function ItemCount(props) {
           -
         </Button>
       </ButtonGroup>
-      <BuyButton count={count} />
+      <BuyButton count={count} poke={props.poke} />
     </>
   );
 }
