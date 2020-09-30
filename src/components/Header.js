@@ -12,7 +12,10 @@ const Header = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="md" className="mb-5">
-        <Navbar.Brand href="/">Pokecommerce</Navbar.Brand>
+        <Link to={"/"}>
+          {" "}
+          <Navbar.Brand>Pokecommerce</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

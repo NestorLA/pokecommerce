@@ -27,7 +27,7 @@ function ItemCount(props) {
         </Button>
         <input
           id="counter"
-          className="font-weight-bold text-right"
+          className="font-weight-bold text-right mr-1"
           value={count}
           disabled
         />
