@@ -14,7 +14,7 @@ const ItemList = ({ pokes }) => {
   return pokes.map((img, i) => (
     <Col xs={6} sm={4} md={3} xl={2} id={img.id} key={img.id}>
       <Link to={`/pokemon/${img.id}`} style={{ textDecoration: "none" }}>
-        <Card className="shadow mb-2 h-100">
+        <Card className="shadow h-100">
           <Card.Img
             className="rounded"
             variant="top"
