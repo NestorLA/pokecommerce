@@ -17,7 +17,7 @@ const Cart = () => {
 
   return (
     <>
-      <Container>
+      <Container className="text-white">
         <h2 className="text-uppercase"> carrito</h2>
         <br></br>
         <p>Items en carrito: {cart.length}</p>
@@ -30,14 +30,14 @@ const Cart = () => {
                   <Card.Img
                     className="rounded"
                     variant="top"
-                    src={img.sprites.front_default}
+                    src={img.image}
                     alt="pokemon"
                   />
                   <Card.Body className="text-center text-dark text-nowrap">
-                    <Card.Title>{uppercaseFL(img.name)}</Card.Title>
-                    <Card.Text className="font-italic">
+                    <Card.Title>{uppercaseFL(img.title)}</Card.Title>
+                    {/* <Card.Text className="font-italic">
                       Tipo: {uppercaseFL(img.types[0].type.name)}
-                    </Card.Text>
+                    </Card.Text> */}
                   </Card.Body>
                 </Card>
               </Col>

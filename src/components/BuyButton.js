@@ -16,7 +16,7 @@ const BuyButton = ({ count, poke }) => {
 
   return (
     <Button
-      variant="dark"
+      variant="danger"
       style={{ width: "16rem" }}
       className="mt-1 mb-3"
       onClick={addToCart}

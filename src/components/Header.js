@@ -37,7 +37,7 @@ const Header = () => {
               placeholder="Busca aquí!"
               className="mr-sm-2"
             />
-            <Button variant="outline-info">Búsqueda</Button>
+            <Button variant="outline-danger">Búsqueda</Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>

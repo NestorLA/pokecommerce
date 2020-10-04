@@ -18,12 +18,14 @@ const ItemDetail = ({ poke }) => {
       <Container>
         <Row>
           <Col className="d-flex justify-content-center flex-column align-items-center">
-            <Card border="dark" style={{ width: "16rem" }}>
-              <Card.Img variant="top" src={poke.sprites.front_default} alt="" />
+            <Card border="dark" style={{ width: "18rem" }} className="h-100 card-detail">
+              <Card.Img variant="top" src={poke.image} alt=""  />
               <Card.Body className="text-center">
-                <Card.Title>Nombre: {uppercaseFL(poke.name)}</Card.Title>
+                <Card.Title>Nombre: {uppercaseFL(poke.title)}</Card.Title>
                 <Card.Text>Altura: {poke.height / 10} metros.</Card.Text>
                 <Card.Text>Peso: {poke.weight / 10} kilogramos.</Card.Text>
+                <Card.Text className=" border border-dark"> Descripción: {poke.description}</Card.Text>
+                <Card.Text> Precio: {poke.price}</Card.Text>
               </Card.Body>
             </Card>
             <ItemCount

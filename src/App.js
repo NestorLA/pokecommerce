@@ -3,8 +3,10 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Context
-
 import { CartProvider } from "./context/CartContext";
+
+// Firebase
+import { getFirestore } from "./firebase";
 
 // Components
 import Spinner from "./components/Spinner";
@@ -25,24 +27,49 @@ function App() {
   const arr = [];
 
   //Llamada a la API
+  // useEffect(() => {
+  //   fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
+  //     .then((response) => response.json())
+  //     .then((data) =>
+  //       setResult(
+  //         data.results.forEach((item) => {
+  //           fetch(item.url)
+  //             .then((response) => response.json())
+  //             .then((allpokemon) => arr.push(allpokemon));
+  //           setPokes(arr);
+  //         })
+  //       )
+  //     );
+  // }, []);
+
+  // llamada a firebase
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
-      .then((response) => response.json())
-      .then((data) =>
-        setResult(
-          data.results.forEach((item) => {
-            fetch(item.url)
-              .then((response) => response.json())
-              .then((allpokemon) => arr.push(allpokemon));
-            setPokes(arr);
-          })
-        )
-      );
+    setLoad(true);
+    const db = getFirestore();
+    const itemCollection = db.collection("items");
+    itemCollection
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.size === 0) {
+          console.log("No data!");
+        }
+        setPokes(querySnapshot.docs.map((doc) => {
+          return ({id : doc.id, ...doc.data() });
+        }));
+      })
+      .catch((error) => {
+        console.log("Error intentando traer items: ", error);
+      })
+      .finally(() => {
+        setLoad(false);
+      });
   }, []);
 
-  setTimeout(() => {
-    setLoad(false);
-  }, 1500);
+  console.log(pokes);
+
+  // setTimeout(() => {
+  //   setLoad(false);
+  // }, 1500);
 
   return (
     <div className="App">

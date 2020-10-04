@@ -22,16 +22,16 @@ function ItemCount(props) {
   return (
     <>
       <ButtonGroup>
-        <Button variant="dark" className="" onClick={addCount}>
+        <Button variant="danger" className="" onClick={addCount}>
           +
         </Button>
         <input
           id="counter"
-          className="font-weight-bold text-right mr-1"
+          className="font-weight-bold text-right mr-1 text-white"
           value={props.count}
           disabled
         />
-        <Button variant="dark" className="" onClick={minusCount}>
+        <Button variant="danger" className="" onClick={minusCount}>
           -
         </Button>
       </ButtonGroup>
