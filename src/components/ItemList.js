@@ -12,11 +12,11 @@ import { Link } from "react-router-dom";
 
 const ItemList = ({ pokes }) => {
   return pokes.map((img, i) => (
-    <Col xs={6} sm={4} md={3} xl={2} id={img.id} key={img.id}>
+    <Col xs={6} sm={6} md={4} xl={2} id={img.id} key={img.id}>
       <Link to={`/pokemon/${img.id}`} style={{ textDecoration: "none" }}>
         <Card className="shadow h-100">
           <Card.Img
-            className="rounded"
+            className="rounded itemlist"
             variant="top"
             src={img.image}
             alt="pokemon"

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
@@ -13,31 +13,37 @@ import { uppercaseFL } from "../helpers";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
+  const [total, setTotal] = useContext(CartContext);
   console.log(cart);
 
+  useEffect(() => {}, []);
   return (
-    <>
-      <Container className="text-white">
-        <h2 className="text-uppercase"> carrito</h2>
-        <br></br>
-        <p>Items en carrito: {cart.length}</p>
-
+    <Container className="text-white ">
+      <Row className="flex-column">
+        <Col>
+          <h2 className="text-uppercase"> carrito</h2>
+          <p>Items en carrito: {cart.length}</p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center mb-2">
         {cart.length > 0 ? (
           <>
             {cart.map((img, i) => (
-              <Col xs={6} sm={4} md={3} xl={2} id={img.id} key={img.id}>
+              <Col xs={6} sm={6} md={4} xl={3} key={img.id}>
                 <Card className="shadow mb-2 h-100">
                   <Card.Img
-                    className="rounded"
+                    className="rounded itemdetail"
                     variant="top"
                     src={img.image}
                     alt="pokemon"
                   />
-                  <Card.Body className="text-center text-dark text-nowrap">
-                    <Card.Title>{uppercaseFL(img.title)}</Card.Title>
-                    {/* <Card.Text className="font-italic">
-                      Tipo: {uppercaseFL(img.types[0].type.name)}
-                    </Card.Text> */}
+                  <Card.Body className="text-center text-dark ">
+                    <Card.Title className="font-weight-bold">
+                      {uppercaseFL(img.title)}
+                    </Card.Title>
+                    <Card.Text>Cantidad: {img.qty}</Card.Text>
+                    <Card.Text>Precio unitario: {img.price}</Card.Text>
+                    <Card.Text>Precio total: {img.price * img.qty}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -45,15 +51,18 @@ const Cart = () => {
           </>
         ) : (
           <>
-            <p>No tienes items en tu carrito!</p>
-            <Link to={"/"}>
-              {" "}
-              <Button variant="dark">Seguí Comprando!</Button>{" "}
-            </Link>
+            <Col>
+              <p>No tienes items en tu carrito!</p>
+              <Link to={"/"}>
+                {" "}
+                <br></br>
+                <Button variant="dark">Seguí Comprando!</Button>{" "}
+              </Link>
+            </Col>
           </>
         )}
-      </Container>
-    </>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
-
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 function ItemCount(props) {
-  console.log(props.count + " en itemcount");
-  console.log(typeof(setCount));
   const numMax = props.Max;
   const numMin = props.Min;
 
@@ -22,20 +19,19 @@ function ItemCount(props) {
   return (
     <>
       <ButtonGroup>
-        <Button variant="danger" className="" onClick={addCount}>
-          +
+        <Button variant="danger" className="" onClick={minusCount}>
+          -
         </Button>
         <input
           id="counter"
           className="font-weight-bold text-right mr-1 text-white"
           value={props.count}
           disabled
-        />
-        <Button variant="danger" className="" onClick={minusCount}>
-          -
+        />{" "}
+        <Button variant="danger" className="" onClick={addCount}>
+          +
         </Button>
       </ButtonGroup>
-      
     </>
   );
 }

@@ -10,8 +10,10 @@ const BuyButton = ({ count, poke }) => {
 
   const addToCart = () => {
     const pokemon = poke;
-    console.log(pokemon);
+    pokemon.qty = count;
+    
     setCart((currentCart) => [...currentCart, pokemon]);
+    console.log(cart);
   };
 
   return (

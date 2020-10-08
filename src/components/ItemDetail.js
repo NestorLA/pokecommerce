@@ -19,7 +19,7 @@ const ItemDetail = ({ poke }) => {
         <Row>
           <Col className="d-flex justify-content-center flex-column align-items-center">
             <Card border="dark" style={{ width: "18rem" }} className="h-100 card-detail">
-              <Card.Img variant="top" src={poke.image} alt=""  />
+              <Card.Img variant="top" src={poke.image} alt=""  className="itemdetail"/>
               <Card.Body className="text-center">
                 <Card.Title>Nombre: {uppercaseFL(poke.title)}</Card.Title>
                 <Card.Text>Altura: {poke.height / 10} metros.</Card.Text>
