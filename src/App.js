@@ -53,9 +53,11 @@ function App() {
         if (querySnapshot.size === 0) {
           console.log("No data!");
         }
-        setPokes(querySnapshot.docs.map((doc) => {
-          return ({id : doc.id, ...doc.data() });
-        }));
+        setPokes(
+          querySnapshot.docs.map((doc) => {
+            return { id: doc.id, ...doc.data() };
+          })
+        );
       })
       .catch((error) => {
         console.log("Error intentando traer items: ", error);
@@ -78,11 +80,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
-              <Container>
-                <Row className="justify-content-md-center">
-                  {load ? <Spinner /> : <Home pokes={pokes} />}
-                </Row>
-              </Container>
+              {load ? <Spinner /> : <Home pokes={pokes} />}
             </Route>
             <Route path="/pokemon/:id" component={ItemDetailContainer}></Route>
             <Route exact path="/cart">

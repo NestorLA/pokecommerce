@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="md" className="mb-5">
+      <Navbar bg="dark" variant="dark" expand="md" className="">
         <Link to={"/"}>
           {" "}
           <Navbar.Brand>Pokecommerce</Navbar.Brand>
