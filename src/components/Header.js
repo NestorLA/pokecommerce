@@ -3,6 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import CartIcon from "./CartIcon";
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 import { Link } from "react-router-dom";

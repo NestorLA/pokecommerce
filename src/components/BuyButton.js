@@ -6,13 +6,14 @@ import Button from "react-bootstrap/Button";
 
 const BuyButton = ({ count, poke }) => {
   console.log(`Este es el poke: ${poke}`);
-  const [setCart] = useContext(CartContext);
+  const [cart, setCart] = useContext(CartContext);
 
   const addToCart = () => {
     const pokemon = poke;
     pokemon.qty = count;
-
+    
     setCart((currentCart) => [...currentCart, pokemon]);
+    console.log(cart);
   };
 
   return (

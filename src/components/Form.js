@@ -105,6 +105,11 @@ const Form = () => {
       0
     );
 
+    console.log(userInfo);
+    console.log(items);
+    console.log(totalPrice);
+    debugger;
+
     const db = getFirestore();
     const orders = db.collection("orders");
     const newOrder = {
@@ -117,7 +122,6 @@ const Form = () => {
     try {
       const { id } = await orders.add(newOrder);
       setOrderId(id);
-      setCart([]);
     } catch (err) {
       console.log("Ha ocurrido un error creando la orden de compra");
     }
@@ -134,10 +138,8 @@ const Form = () => {
               La transacción se ha realizado exitosamente.
             </h4>
             <p className="font-weight-bold">El ID de tu compra es {orderId}</p>
-            <Link to={`/`}>
-              <button className="btn btn-block btn-dark">
-                Volver a la tienda
-              </button>
+            <Link  to={`/`}>
+              <button className="btn btn-block btn-dark">Volver a la tienda</button>
             </Link>
           </div>
         </div>

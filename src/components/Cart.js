@@ -10,6 +10,7 @@ import Button from "react-bootstrap/Button";
 
 const Cart = () => {
   const [cart] = useContext(CartContext);
+  console.log(cart);
 
   useEffect(() => {}, []);
   return (

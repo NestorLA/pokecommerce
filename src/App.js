@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -18,6 +18,8 @@ import Categories from "./components/Categories";
 import Footer from "./components/Footer";
 
 //React-Bootstrap
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
@@ -48,6 +50,12 @@ function App() {
         setLoad(false);
       });
   }, []);
+
+  console.log(pokes);
+
+  // setTimeout(() => {
+  //   setLoad(false);
+  // }, 1500);
 
   return (
     <div className="App">

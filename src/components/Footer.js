@@ -9,47 +9,15 @@ const Footer = () => {
       <Container>
         <p className="pt-2">
           Sitio creado por{" "}
-          <a
-            href="https://nestoracerbo.carrd.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-            crossorigin
-            className="text-danger"
-            id="linkpropio"
-          >
+          <a href="https://nestoracerbo.carrd.co/" target="_blank" rel="noopener noreferrer" crossorigin className="text-danger" id="linkpropio">
             Néstor Acerbo
-          </a>{" "}
-          para el curso de React de Coderhouse
+          </a> para el curso de React de Coderhouse
         </p>
         <div className="socialMediaLinks pb-2">
-          <a
-            href="https://twitter.com/nlacerbo"
-            className="fab fa-twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-            crossorigin
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/nestorleonelacerbo/"
-            className="fab fa-linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            crossorigin
-          ></a>
-          <a
-            href="https://www.instagram.com/nesacerbo/"
-            className="fab fa-instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-            crossorigin
-          ></a>
-          <a
-            href="https://github.com/NestorLA"
-            className="fab fa-github"
-            target="_blank"
-            rel="noopener noreferrer"
-            crossorigin
-          ></a>
+          <a href="https://twitter.com/nlacerbo" className="fab fa-twitter" target="_blank" rel="noopener noreferrer" crossorigin></a>
+          <a href="https://www.linkedin.com/in/nestorleonelacerbo/" className="fab fa-linkedin" target="_blank" rel="noopener noreferrer" crossorigin></a>
+          <a href="https://www.instagram.com/nesacerbo/" className="fab fa-instagram" target="_blank" rel="noopener noreferrer" crossorigin></a>
+          <a href="https://github.com/NestorLA" className="fab fa-github" target="_blank" rel="noopener noreferrer" crossorigin></a>
         </div>
       </Container>
     </footer>
