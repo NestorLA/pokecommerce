@@ -1,5 +1,7 @@
 # Aplicación hecha para el curso de React de Coderhouse (2020)
 
+## Demo: https://pokecommerce.vercel.app/
+
 **Tecnologías y librerías utilizadas:**
 
 - **ReactJS - Create React App**
@@ -15,6 +17,10 @@
 Esta aplicación permite elegir productos, entrar a sus detalles, agregarlos al carrito y realizar una orden de pedido.
 Al darle click al boton de "Realizar compra" se pide llenar un formulario con datos.
 Al confirmar se genera una orden en Firebase, se guarda y se le da al usuario el código de la orden de compra.
+
+### Gif de demo
+
+<img src="./assets/pruebacoder.gif" width="1000" height="600" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
