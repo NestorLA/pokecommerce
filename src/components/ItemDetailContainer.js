@@ -48,8 +48,6 @@ const ItemDetailContainer = () => {
       });
   }, [id]);
 
-  console.log(poke);
-
   return <>{load ? <Spinner /> : <ItemDetail poke={poke} />}</>;
 };
 
