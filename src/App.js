@@ -13,6 +13,9 @@ import Spinner from "./components/Spinner";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+import Form from "./components/Form";
+import Categories from "./components/Categories";
+import Footer from "./components/Footer";
 
 //React-Bootstrap
 import Container from "react-bootstrap/Container";
@@ -20,27 +23,8 @@ import Row from "react-bootstrap/Row";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
-  const [result, setResult] = useState([]);
   const [pokes, setPokes] = useState([]);
   const [load, setLoad] = useState("true");
-
-  const arr = [];
-
-  //Llamada a la API
-  // useEffect(() => {
-  //   fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
-  //     .then((response) => response.json())
-  //     .then((data) =>
-  //       setResult(
-  //         data.results.forEach((item) => {
-  //           fetch(item.url)
-  //             .then((response) => response.json())
-  //             .then((allpokemon) => arr.push(allpokemon));
-  //           setPokes(arr);
-  //         })
-  //       )
-  //     );
-  // }, []);
 
   // llamada a firebase
   useEffect(() => {
@@ -80,11 +64,23 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
-              {load ? <Spinner /> : <Home pokes={pokes} />}
+              {load ? (
+                <Spinner />
+              ) : (
+                <>
+                  <Home pokes={pokes} /> <Footer />
+                </>
+              )}
             </Route>
             <Route path="/pokemon/:id" component={ItemDetailContainer}></Route>
             <Route exact path="/cart">
               <Cart />
+            </Route>
+            <Route path="/form">
+              <Form />
+            </Route>
+            <Route path="/categories/:categoryId">
+              <Categories />
             </Route>
           </Switch>
         </CartProvider>

@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 import { Link } from "react-router-dom";
 
@@ -28,16 +29,26 @@ const Header = () => {
             <Link to={"/cart"}>
               <Navbar.Text className="mr-2">Carrito</Navbar.Text>
             </Link>
+            <NavDropdown title="Categorías" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+                <Link to="/categories/hierba">Hierba </Link>
+              </NavDropdown.Item>{" "}
+              <NavDropdown.Item>
+                <Link to="/categories/fuego">Fuego</Link>
+              </NavDropdown.Item>{" "}
+              <NavDropdown.Item>
+                <Link to="/categories/agua">Agua</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                {" "}
+                <Link to="/categories/bicho">Bicho </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
 
           <Form inline>
             <CartIcon />
-            <FormControl
-              type="text"
-              placeholder="Busca aquí!"
-              className="mr-sm-2"
-            />
-            <Button variant="outline-danger">Búsqueda</Button>
+           
           </Form>
         </Navbar.Collapse>
       </Navbar>

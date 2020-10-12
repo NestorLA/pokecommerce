@@ -12,11 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
@@ -43,26 +38,23 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## About
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Sitio web hecho para el curso de React de Coderhouse
 
-### Analyzing the Bundle Size
+Se utilizo:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<ul>
+<li>React</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>Javascript</li>
+<li>Framework CSS: React-Bootstrap</li>
+<li>React-router-dom para Routing</li>
+<li>Firebase como backend</li>
+</ul>
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<p> Sitio creado por <a href="https://nestoracerbo.carrd.co/" target="_blank" rel="noopener noreferrer" crossorigin>
+            Néstor Acerbo
+          </a> para el curso de React de Coderhouse
+        </p>

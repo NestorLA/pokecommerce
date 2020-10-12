@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartIcon = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   return (
     <>
       <Link to={"/cart"}>
