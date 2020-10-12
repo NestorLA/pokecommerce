@@ -20,7 +20,7 @@ Al confirmar se genera una orden en Firebase, se guarda y se le da al usuario el
 
 ### Gif de demo
 
-<img src="\src\assets\pruebacoder.gif" width="1000" height="600" />
+<img src=".\src\assets\pruebacoder.gif" width="768" height="542" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
