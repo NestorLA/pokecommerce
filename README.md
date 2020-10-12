@@ -1,8 +1,30 @@
+# Aplicación hecha para el curso de React de Coderhouse (2020)
+
+**Tecnologías y librerías utilizadas:**
+
+- **ReactJS - Create React App**
+- Estilos con **React-Bootstrap**
+- Routing con **React Router Dom**
+- Backend con **Firebase**
+
+<p> Proyecto creado por <a href="https://nestoracerbo.carrd.co/" target="_blank" rel="noopener noreferrer" crossorigin>
+            Néstor Acerbo
+          </a> para el curso de React de Coderhouse
+        </p>
+
+Esta aplicación permite elegir productos, entrar a sus detalles, agregarlos al carrito y realizar una orden de pedido.
+Al darle click al boton de "Realizar compra" se pide llenar un formulario con datos.
+Al confirmar se genera una orden en Firebase, se guarda y se le da al usuario el código de la orden de compra.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### npm install
+
+To install dependencies
 
 ### `npm start`
 
@@ -37,24 +59,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-## About
-
-### Sitio web hecho para el curso de React de Coderhouse
-
-Se utilizo:
-
-<ul>
-<li>React</li>
-<li>HTML</li>
-<li>CSS</li>
-<li>Javascript</li>
-<li>Framework CSS: React-Bootstrap</li>
-<li>React-router-dom para Routing</li>
-<li>Firebase como backend</li>
-</ul>
-
-<p> Sitio creado por <a href="https://nestoracerbo.carrd.co/" target="_blank" rel="noopener noreferrer" crossorigin>
-            Néstor Acerbo
-          </a> para el curso de React de Coderhouse
-        </p>
