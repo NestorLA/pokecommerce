@@ -16,7 +16,7 @@ const TableCart = ({ cart }) => {
   }, [cart]);
   return (
     <>
-      <Table striped bordered variant="dark">
+      <Table striped bordered variant="dark" responsive="sm">
         <thead>
           <tr>
             <th>Pokemon</th>
