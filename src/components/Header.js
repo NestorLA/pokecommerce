@@ -9,7 +9,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import { Link } from "react-router-dom";
 
+import { useUser } from "../session/hooks";
+
 const Header = () => {
+  const user = useUser();
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="md" className="">
@@ -48,7 +51,9 @@ const Header = () => {
 
           <Form inline>
             <CartIcon />
-           
+            {user ? (
+              <a style={{ color: "white" }}>Bienvenido {user.displayName}</a>
+            ) : null}
           </Form>
         </Navbar.Collapse>
       </Navbar>

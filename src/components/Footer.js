@@ -9,7 +9,7 @@ const Footer = () => {
       <Container>
         <p className="pt-2">
           Sitio creado por{" "}
-          <a href="https://nestoracerbo.carrd.co/" target="_blank" rel="noopener noreferrer" crossorigin className="text-danger" id="linkpropio">
+          <a href="https://nestoracerbo.carrd.co/" target="_blank" rel="noopener noreferrer" crossOrigin className="text-danger" id="linkpropio">
             Néstor Acerbo
           </a> para el curso de React de Coderhouse
         </p>
