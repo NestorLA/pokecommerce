@@ -19,6 +19,7 @@ const providers = {
 
 export { auth, providers };
 
+
 export function getFirebase() {
   return app;
 }
