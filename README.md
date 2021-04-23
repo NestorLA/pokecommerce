@@ -1,4 +1,4 @@
-# Aplicación hecha para el curso de React de Coderhouse (2020)
+# Aplicación realizada para el curso de React de Coderhouse (2020)
 
 ## Demo: https://pokecommerce.vercel.app/
 
